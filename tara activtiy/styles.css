@@ -1,0 +1,134 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Fredoka', sans-serifSS;
+}
+
+.background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('bini-background.jpg'); /* Replace with your background image URL */
+  transition: background-image 0.5s ease-in-out;
+}
+
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  z-index: 0;
+}
+
+.neon-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Fredoka', sans-serif; /* Use a font that supports hanging letters */
+  font-size: 10em; /* Adjust size as needed */
+  color: white;
+  text-align: center;
+  animation: neon-border 1.5s infinite alternate;
+  text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue, 0 0 50px blue;
+  z-index: 1;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.card:hover {
+  border: 4px solid transparent;
+  background-image: linear-gradient(45deg, red, blue);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 10px rgba(0, 0, 255, 0.8);
+}
+
+.card-header {
+  position: relative;
+}
+
+.card-image, .card-gif {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 10px;
+  z-index: 1;
+}
+
+.play-button button {
+  background: #1db954; /* Spotify green */
+  border: none;
+  border-radius: 50%;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card-content {
+  margin-top: 20px;
+}
+
+.card-content h1 {
+  font-size: 1.5em;
+  margin: 0;
+  font-family: 'Fredoka', sans-serif; /* Hanging letters font */
+  letter-spacing: 2px; /* Adjust spacing for hanging effect */
+}
+
+.card-content p {
+  color: #666;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Neon effect for the border */
+@keyframes neon-border {
+  0% {
+      text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue, 0 0 50px blue;
+  }
+  50% {
+      text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px blue, 0 0 60px blue, 0 0 80px blue, 0 0 100px blue;
+  }
+  100% {
+      text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue, 0 0 50px blue;
+  }
+}
